@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Nikitha Patnala — UI/UX Designer & Full-Stack Developer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .breadcrumb a {
+      color: #818cf8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: #c7d2fe;
+    }
+
+    .about-profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .about-bio-text {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .about-bio-text p {
+      margin-bottom: 16px;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .philosophy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      transition: all var(--transition-smooth);
+    }
+
+    .philosophy-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+    }
+
+    @media (max-width: 850px) {
+      .about-profile-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Subtle Background & Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img class="brand-avatar" src="assets/images/nikitha.png" alt="Nikitha Patnala">
+        <div class="brand-title">
+          <span>Nikitha Patnala</span>
+          <span class="brand-tag">PORTFOLIO</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-terminal" onclick="openTerminal()" title="Toggle Developer Console (Shortcut: `)">
+          <i data-lucide="terminal"></i> Console
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb" data-aos="fade-right">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span style="color: #cbd5e1;">About Me</span>
+        </div>
+
+        <div class="section-tag" data-aos="fade-up">
+          <i data-lucide="user"></i> Background & Philosophy
+        </div>
+
+        <h1 class="section-title" data-aos="fade-up" data-aos-delay="100" style="font-size: 2.8rem; margin-top: 10px;">
+          Designing Experiences, <span class="text-gradient-accent">Engineering Systems</span>
+        </h1>
+
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150" style="max-width: 720px;">
+          Meet Nikitha Patnala — 3rd Year Computer Science student at GITAM University, UI/UX Designer, and Full-Stack Developer passionate about human-centered design and AI engineering.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-Depth About Bio Section -->
+  <section style="padding: 70px 0;">
+    <div class="container">
+      <div class="about-profile-grid">
+        <div class="about-bio-text" data-aos="fade-right">
+          <h2 style="font-size: 1.85rem; color: var(--text-primary); margin-bottom: 20px;">
+            Hi, I'm <span class="text-gradient">Nikitha Patnala</span>
+          </h2>
+          <p>
+            I am a 3rd-year Computer Science & Engineering undergraduate at <strong>GITAM University (Class of 2028)</strong>. My core strength lies in <strong>UI/UX & Product Design</strong>, coupled with hands-on <strong>Full-Stack Engineering</strong>.
+          </p>
+          <p>
+            I believe software should not merely function; it should feel effortless, intuitive, and visually harmonious. I focus heavily on creating deliberate user journeys in Figma, building cohesive design systems, and converting those concepts into pixel-perfect, accessible web interfaces.
+          </p>
+          <p>
+            Simultaneously, I am deeply intrigued by <strong>Local LLMs and AI Agents</strong>—exploring how small language models, retrieval pipelines, and AI engineering can be embedded into student tools and productivity workflows like <strong>StudyFlow</strong>.
+          </p>
+          <div style="display: flex; gap: 14px; margin-top: 24px;">
+            <a href="projects.html" class="btn btn-primary">
+              <i data-lucide="layers"></i> Explore My Work
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+              <i data-lucide="mail"></i> Get In Touch
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual-card" data-aos="fade-left">
+          <div class="dev-card-header">
+            <img class="dev-card-img" src="assets/images/nikitha.png" alt="Nikitha Patnala" onerror="this.src='assets/images/nikitha.png'">
+            <div>
+              <h3 class="dev-card-name">Nikitha Patnala</h3>
+              <div class="dev-card-role">UI/UX Designer & Full-Stack Developer</div>
+            </div>
+          </div>
+          <div class="quick-stats-grid" style="margin-top: 20px;">
+            <div class="stat-item">
+              <div class="stat-value" style="color: #c084fc;">UI/UX</div>
+              <div class="stat-label">Core Focus</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">GITAM</div>
+              <div class="stat-label">University</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">3rd Year</div>
+              <div class="stat-label">CSE (2028)</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" style="color: #34d399;">Full-Stack</div>
+              <div class="stat-label">Architecture</div>
+            </div>
+          </div>
+          <div style="margin-top: 24px; padding: 14px; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #818cf8; margin-bottom: 6px;">CURRENT EXPLORATION</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+              Designing human-first interfaces for Local LLMs, autonomous agentic loops, and cognitive learning tools.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design & Engineering Philosophy -->
+  <section style="background: rgba(12, 17, 29, 0.4); padding: 70px 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag"><i data-lucide="compass"></i> Core Philosophy</div>
+        <h2 class="section-title">Design-First Craftsmanship</h2>
+        <p class="section-subtitle">Bridging the gap between conceptual Figma prototypes and robust backend systems.</p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="cap-icon-box" style="color: #c084fc; background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.25);">
+            <i data-lucide="palette"></i>
+          </div>
+          <h3 class="cap-title">UI/UX & Design Systems</h3>
+          <p class="cap-desc">
+            Wireframing, typography hierarchies, and cohesive design tokens in Figma. Ensuring spacing, contrast, and layout balance before writing a single line of CSS.
+          </p>
+        </div>
+
+        <div class="philosophy-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="cap-icon-box" style="color: #38bdf8; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.25);">
+            <i data-lucide="layout"></i>
+          </div>
+          <h3 class="cap-title">Pixel-Perfect Frontend</h3>
+          <p class="cap-desc">
+            Translating design intent into responsive, fluid web apps with Tailwind CSS and modern JavaScript. Clean component hierarchies and semantic HTML.
+          </p>
+        </div>
+
+        <div class="philosophy-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="cap-icon-box" style="color: #34d399; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.25);">
+            <i data-lucide="server"></i>
+          </div>
+          <h3 class="cap-title">Reliable Backend & APIs</h3>
+          <p class="cap-desc">
+            Constructing REST endpoints with Node.js, Express, MongoDB, and MySQL. Validating payload schemas and error states with Postman.
+          </p>
+        </div>
+
+        <div class="philosophy-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="cap-icon-box" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.25);">
+            <i data-lucide="bot"></i>
+          </div>
+          <h3 class="cap-title">Local LLMs & AI Engineering</h3>
+          <p class="cap-desc">
+            Actively experimenting with Local LLM runtimes, agent prompt pipelines, and Gemini AI SDK integrations to build intelligent, context-aware user applications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Skills Breakdown Section -->
+  <section id="skills" style="padding: 80px 0;">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag"><i data-lucide="cpu"></i> Technical & Design Arsenal</div>
+        <h2 class="section-title">Skills & Toolchain Proficiency</h2>
+        <p class="section-subtitle">A transparent overview of my toolset, design competencies, and programming foundations.</p>
+      </div>
+
+      <div class="skills-container">
+        <!-- UI/UX Design -->
+        <div class="skills-group" data-aos="fade-up" data-aos-delay="50">
+          <h3 class="skills-group-title">
+            <i data-lucide="palette" style="color: #c084fc;"></i> UI/UX & Product Design
+          </h3>
+          <div class="skill-list" id="design-skills">
+            <!-- Populated from portfolio-data.js -->
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="skills-group" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="skills-group-title">
+            <i data-lucide="code" style="color: var(--accent-primary);"></i> Languages & Fundamentals
+          </h3>
+          <div class="skill-list" id="lang-skills">
+            <!-- Populated from portfolio-data.js -->
+          </div>
+        </div>
+
+        <!-- Frameworks & Tools -->
+        <div class="skills-group" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="skills-group-title">
+            <i data-lucide="server" style="color: var(--accent-secondary);"></i> Frameworks, Tools & AI
+          </h3>
+          <div class="skill-list" id="tool-skills">
+            <!-- Populated from portfolio-data.js -->
+          </div>
+        </div>
+
+        <div class="focus-grid" id="focus-grid">
+          <!-- Developer focus & mindset cards -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Journey Timeline -->
+  <section id="journey" style="padding: 80px 0; background: rgba(12, 17, 29, 0.4); border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-tag"><i data-lucide="graduation-cap"></i> Academic Timeline</div>
+        <h2 class="section-title">Education & Milestones</h2>
+        <p class="section-subtitle">Academic foundations at GITAM University combined with self-directed software development.</p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-list" id="timeline-list">
+          <!-- Populated from portfolio-data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Nikitha Patnala. Built with HTML5, CSS & Modern JavaScript.</p>
+      <p style="margin-top: 6px; font-size: 0.8rem; color: #64748b;">
+        Pro-tip: Press <kbd style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px;">`</kbd> anytime to launch the developer command console.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Developer Console Modal -->
+  <div class="terminal-overlay" id="terminal-modal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <button class="term-btn term-btn-close" id="term-close-btn" title="Close"></button>
+          <button class="term-btn term-btn-min" title="Minimize"></button>
+          <button class="term-btn term-btn-max" title="Expand"></button>
+        </div>
+        <div class="terminal-title">
+          <i data-lucide="terminal" style="width: 14px; height: 14px; color: var(--accent-primary);"></i>
+          <span>nikitha@gitam: ~</span>
+        </div>
+        <div class="terminal-hint">Press ESC or ` to close</div>
+      </div>
+      <div class="terminal-body">
+        <div class="term-welcome">
+          <i data-lucide="terminal" style="width: 14px; height: 14px; color: var(--accent-primary); vertical-align: middle;"></i> <strong>Nikitha Patnala — Developer Console</strong><br>
+          Type <span class="term-highlight">help</span> to view available commands (<span class="term-accent">about</span>, <span class="term-accent">skills</span>, <span class="term-accent">projects</span>, <span class="term-accent">contact</span>).
+        </div>
+        <div id="term-output"></div>
+        <div class="terminal-input-row">
+          <span class="term-prompt-prefix">nikitha@gitam:~$</span>
+          <input type="text" id="term-input" class="term-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/background-mesh.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

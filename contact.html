@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Connect — Nikitha Patnala</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .breadcrumb a {
+      color: #818cf8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: #c7d2fe;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .message-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      backdrop-filter: blur(16px);
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Subtle Background & Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img class="brand-avatar" src="assets/images/nikitha.png" alt="Nikitha Patnala">
+        <div class="brand-title">
+          <span>Nikitha Patnala</span>
+          <span class="brand-tag">PORTFOLIO</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-terminal" onclick="openTerminal()" title="Toggle Developer Console (Shortcut: `)">
+          <i data-lucide="terminal"></i> Console
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb" data-aos="fade-right">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span style="color: #cbd5e1;">Contact</span>
+        </div>
+
+        <div class="section-tag" data-aos="fade-up">
+          <i data-lucide="mail"></i> Let's Connect
+        </div>
+
+        <h1 class="section-title" data-aos="fade-up" data-aos-delay="100" style="font-size: 2.8rem; margin-top: 10px;">
+          Start a Conversation & <span class="text-gradient-accent">Collaborate</span>
+        </h1>
+
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150" style="max-width: 680px;">
+          Interested in UI/UX design, full-stack engineering, hackathons, or AI projects? Reach out through any of the channels below or leave a quick message.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Body Section -->
+  <section style="padding: 60px 0 100px;">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Direct Channels -->
+        <div data-aos="fade-right">
+          <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-primary);">
+            Direct Channels
+          </h2>
+
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <!-- Email -->
+            <div class="contact-card">
+              <div class="contact-card-header">
+                <div class="contact-card-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.25);">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div>
+                  <h4 style="font-size: 1.05rem; margin-bottom: 2px;">Email</h4>
+                  <div style="font-size: 0.85rem; color: var(--text-muted);">Direct inbox for inquiries & proposals</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+                <a href="mailto:nikitha.patnala7@gmail.com" style="color: #c7d2fe; text-decoration: none; font-family: var(--font-mono); font-size: 0.88rem;">nikitha.patnala7@gmail.com</a>
+                <button onclick="copyToClipboard('nikitha.patnala7@gmail.com', 'Email')" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.78rem;">
+                  <i data-lucide="copy"></i> Copy
+                </button>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-card">
+              <div class="contact-card-header">
+                <div class="contact-card-icon" style="color: #38bdf8; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.25);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: 1.05rem; margin-bottom: 2px;">LinkedIn</h4>
+                  <div style="font-size: 0.85rem; color: var(--text-muted);">Professional updates & networking</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+                <span style="color: var(--text-secondary); font-size: 0.88rem;">Nikitha Patnala</span>
+                <a href="https://www.linkedin.com/in/nikitha-patnala-256a07323/" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="padding: 4px 12px; font-size: 0.78rem;">
+                  <i data-lucide="external-link"></i> Connect
+                </a>
+              </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-card">
+              <div class="contact-card-header">
+                <div class="contact-card-icon" style="color: #c084fc; background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.25);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: 1.05rem; margin-bottom: 2px;">GitHub</h4>
+                  <div style="font-size: 0.85rem; color: var(--text-muted);">Repositories & open-source activity</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+                <span style="color: #c7d2fe; font-family: var(--font-mono); font-size: 0.88rem;">github.com/patnalanikitha</span>
+                <a href="https://github.com/patnalanikitha" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="padding: 4px 12px; font-size: 0.78rem;">
+                  <i data-lucide="external-link"></i> View
+                </a>
+              </div>
+            </div>
+
+            <!-- University & Location -->
+            <div class="contact-card">
+              <div class="contact-card-header">
+                <div class="contact-card-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.25);">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <h4 style="font-size: 1.05rem; margin-bottom: 2px;">Location & University</h4>
+                  <div style="font-size: 0.85rem; color: var(--text-muted);">GITAM University • Visakhapatnam, India</div>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                Available for remote design and full-stack engagements, hackathon collaborations, and student engineering initiatives.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Message Form -->
+        <div data-aos="fade-left">
+          <div class="message-form-card">
+            <h2 style="font-size: 1.4rem; margin-bottom: 8px; color: var(--text-primary);">
+              Send a Quick Message
+            </h2>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">
+              Fill out the form below or write directly to <a href="mailto:nikitha.patnala7@gmail.com" style="color: #818cf8;">nikitha.patnala7@gmail.com</a>.
+            </p>
+
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Sharma" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Your Email</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="alex@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Subject / Purpose</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="UI/UX Collaboration, Hackathon Team, or Project Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea id="contact-message" class="form-textarea" rows="4" placeholder="Share a few details about your project or idea..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+                <i data-lucide="send"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Nikitha Patnala. Built with HTML5, CSS & Modern JavaScript.</p>
+      <p style="margin-top: 6px; font-size: 0.8rem; color: #64748b;">
+        Pro-tip: Press <kbd style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px;">`</kbd> anytime to launch the developer command console.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Developer Console Modal -->
+  <div class="terminal-overlay" id="terminal-modal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <button class="term-btn term-btn-close" id="term-close-btn" title="Close"></button>
+          <button class="term-btn term-btn-min" title="Minimize"></button>
+          <button class="term-btn term-btn-max" title="Expand"></button>
+        </div>
+        <div class="terminal-title">
+          <i data-lucide="terminal" style="width: 14px; height: 14px; color: var(--accent-primary);"></i>
+          <span>nikitha@gitam: ~</span>
+        </div>
+        <div class="terminal-hint">Press ESC or ` to close</div>
+      </div>
+      <div class="terminal-body">
+        <div class="term-welcome">
+          <i data-lucide="terminal" style="width: 14px; height: 14px; color: var(--accent-primary); vertical-align: middle;"></i> <strong>Nikitha Patnala — Developer Console</strong><br>
+          Type <span class="term-highlight">help</span> to view available commands (<span class="term-accent">about</span>, <span class="term-accent">skills</span>, <span class="term-accent">projects</span>, <span class="term-accent">contact</span>).
+        </div>
+        <div id="term-output"></div>
+        <div class="terminal-input-row">
+          <span class="term-prompt-prefix">nikitha@gitam:~$</span>
+          <input type="text" id="term-input" class="term-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/background-mesh.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const subject = document.getElementById('contact-subject').value;
+      const message = document.getElementById('contact-message').value;
+
+      // Launch mailto fallback with pre-filled content
+      const mailtoUrl = `mailto:nikitha.patnala7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + message)}`;
+      window.location.href = mailtoUrl;
+
+      window.showToast("Opening default mail client to send your message to Nikitha!");
+      document.getElementById('contact-form').reset();
+    }
+  </script>
+</body>
+</html>

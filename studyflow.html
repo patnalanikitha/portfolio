@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow — AI Academic Companion & Pixel Focus Studio | Nikitha Patnala</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Case Study Custom Styling */
+    .case-study-hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: #818cf8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: #c7d2fe;
+    }
+
+    .project-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      color: #34d399;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .case-title {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .case-tagline {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 750px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* Small Element Logos Bar (as requested in reference image) */
+    .tech-elements-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 20px;
+      background: rgba(12, 17, 28, 0.7);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(12px);
+      margin-bottom: 36px;
+    }
+
+    .tech-element-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #d1d5db;
+    }
+
+    .tech-element-icon {
+      color: #f59e0b; /* Amber/gold accent as shown in user's image */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .case-links-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    /* Case Study Content Sections */
+    .case-content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      padding: 60px 0;
+    }
+
+    .case-main {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .case-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      backdrop-filter: blur(16px);
+    }
+
+    .sidebar-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      padding-bottom: 8px;
+    }
+
+    .spec-label {
+      color: var(--text-muted);
+    }
+
+    .spec-val {
+      font-weight: 500;
+      color: var(--text-primary);
+      text-align: right;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      backdrop-filter: blur(16px);
+      transition: border-color var(--transition-fast);
+    }
+
+    .feature-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .feature-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .feature-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: rgba(99, 102, 241, 0.12);
+      color: #818cf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .feature-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .feature-list li i {
+      color: #10b981;
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Live Preview Banner */
+    .preview-banner {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(56, 189, 248, 0.08));
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      text-align: center;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .pixel-pet-badge {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.75rem;
+      color: #fbbf24;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    @media (max-width: 992px) {
+      .case-content-grid {
+        grid-template-columns: 1fr;
+      }
+      .case-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Atmosphere -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img class="brand-avatar" src="assets/images/nikitha.png" alt="Nikitha Patnala">
+        <div class="brand-title">
+          <span>Nikitha Patnala</span>
+          <span class="brand-tag">PORTFOLIO</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-terminal" onclick="openTerminal()" title="Toggle Developer Console">
+          <i data-lucide="terminal"></i> Console
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Hero Header -->
+  <section class="case-study-hero">
+    <div class="container">
+      <div class="breadcrumb" data-aos="fade-right">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="projects.html">Projects</a>
+        <span>/</span>
+        <span style="color: #cbd5e1;">StudyFlow Case Study</span>
+      </div>
+
+      <div class="project-header-badge" data-aos="fade-up">
+        <span class="pulse-dot"></span>
+        <span>Deployed Live & Verified</span>
+        <span class="pixel-pet-badge">CAT: MOCHI LV.4</span>
+      </div>
+
+      <h1 class="case-title" data-aos="fade-up" data-aos-delay="100">
+        StudyFlow — <span class="text-gradient-accent">AI Academic Companion & Pixel Focus Studio</span>
+      </h1>
+
+      <p class="case-tagline" data-aos="fade-up" data-aos-delay="150">
+        A gamified, all-in-one academic productivity platform engineered with Google Gemini AI, the SuperMemo-2 (SM-2) spaced repetition algorithm, and a real-time procedural Web Audio soundscape engine.
+      </p>
+
+      <!-- Elements Badges (Matches reference image style with amber vector icons) -->
+      <div class="tech-elements-bar" data-aos="fade-up" data-aos-delay="200">
+        <div class="tech-element-item">
+          <span class="tech-element-icon"><i data-lucide="sparkles" style="width: 16px; height: 16px; stroke: #f59e0b;"></i></span>
+          <span>Google Gemini AI</span>
+        </div>
+        <div class="tech-element-item">
+          <span class="tech-element-icon"><i data-lucide="refresh-cw" style="width: 16px; height: 16px; stroke: #f59e0b;"></i></span>
+          <span>SM-2 Spaced Repetition</span>
+        </div>
+        <div class="tech-element-item">
+          <span class="tech-element-icon"><i data-lucide="volume-2" style="width: 16px; height: 16px; stroke: #f59e0b;"></i></span>
+          <span>Procedural Audio Engine</span>
+        </div>
+        <div class="tech-element-item">
+          <span class="tech-element-icon"><i data-lucide="code-2" style="width: 16px; height: 16px; stroke: #f59e0b;"></i></span>
+          <span>React 18 / TypeScript</span>
+        </div>
+        <div class="tech-element-item">
+          <span class="tech-element-icon"><i data-lucide="palette" style="width: 16px; height: 16px; stroke: #f59e0b;"></i></span>
+          <span>Tailwind CSS</span>
+        </div>
+        <div class="tech-element-item">
+          <span class="tech-element-icon"><i data-lucide="gamepad-2" style="width: 16px; height: 16px; stroke: #f59e0b;"></i></span>
+          <span>Pixel Focus Studio</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="case-links-bar" data-aos="fade-up" data-aos-delay="250">
+        <a href="https://studyflow-zeta-nine.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+          <i data-lucide="external-link"></i> Launch Live App on Vercel
+        </a>
+        <a href="https://github.com/patnalanikitha/studyflow" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+          View GitHub Repository
+        </a>
+        <a href="projects.html" class="btn btn-secondary">
+          <i data-lucide="arrow-left"></i> Back to Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Case Study Content -->
+  <main class="container">
+    <div class="case-content-grid">
+      <!-- Left: In-Depth Breakdown -->
+      <div class="case-main">
+        <!-- 1. The Problem & Motivation -->
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-card-header">
+            <div class="feature-icon-box"><i data-lucide="target"></i></div>
+            <div>
+              <h3>The Motivation & Problem Statement</h3>
+              <span style="font-size: 0.85rem; color: #818cf8;">Why StudyFlow Was Built</span>
+            </div>
+          </div>
+          <p class="feature-desc">
+            Modern students are inundated with overwhelming course material, distracted by digital clutter, and struggle to maintain disciplined focus sessions. Traditional study apps are either boring spreadsheet-like flashcard tools or clunky timer utilities lacking cohesion.
+          </p>
+          <p class="feature-desc">
+            As a 3rd-year CSE student at GITAM University, I designed and developed <strong>StudyFlow</strong> to unify <em>cognitive science (spaced repetition)</em>, <em>generative AI intelligence</em>, and <em>gamified emotional engagement (pixel companions & procedural audio)</em> into a seamless, distraction-free environment.
+          </p>
+        </div>
+
+        <!-- 2. Core Architecture & Features -->
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-card-header">
+            <div class="feature-icon-box"><i data-lucide="sparkles"></i></div>
+            <div>
+              <h3>1. AI-Powered Academic Companion</h3>
+              <span style="font-size: 0.85rem; color: #818cf8;">Automated Study Material Synthesis</span>
+            </div>
+          </div>
+          <p class="feature-desc">
+            Leveraging Google Gemini AI models, StudyFlow ingests complex lecture notes or academic topics and intelligently transforms them into testable knowledge:
+          </p>
+          <ul class="feature-list">
+            <li><i data-lucide="check-circle-2"></i> <strong>Smart Flashcard Generation:</strong> Extracts key concepts, definitions, and formulas into concise Q&A decks.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Interactive Quizzes:</strong> Dynamically formulates multiple-choice and conceptual assessment questions with instant score feedback.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Conceptual Summaries:</strong> Generates high-yield study outlines for quick review before exams.</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-card-header">
+            <div class="feature-icon-box"><i data-lucide="brain"></i></div>
+            <div>
+              <h3>2. SuperMemo-2 (SM-2) Spaced Repetition Engine</h3>
+              <span style="font-size: 0.85rem; color: #818cf8;">Algorithmic Long-Term Memory Retention</span>
+            </div>
+          </div>
+          <p class="feature-desc">
+            Instead of naive cramming, StudyFlow integrates an authentic implementation of the cognitive SM-2 algorithm:
+          </p>
+          <ul class="feature-list">
+            <li><i data-lucide="check-circle-2"></i> <strong>Ease Factor & Interval Calculation:</strong> Dynamically calculates review intervals based on card difficulty and user recall quality (scores 0–5).</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Optimal Review Schedules:</strong> Cards automatically space out across 1 day, 6 days, and exponential intervals to maximize retention at the point of forgetting.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Due Date Automation:</strong> Tracks state transitions between <code>learning</code> and <code>review</code> phases with ISO timestamp synchronization.</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-card-header">
+            <div class="feature-icon-box"><i data-lucide="volume-2"></i></div>
+            <div>
+              <h3>3. Procedural Soundscape Engine (Web Audio API)</h3>
+              <span style="font-size: 0.85rem; color: #818cf8;">Zero-Asset Synthetic Audio Synthesis</span>
+            </div>
+          </div>
+          <p class="feature-desc">
+            To eliminate heavy audio file downloads and ensure 100% offline reliability, StudyFlow features a custom <code>ProceduralSoundEngine</code> written with the native HTML5 Web Audio API:
+          </p>
+          <ul class="feature-list">
+            <li><i data-lucide="check-circle-2"></i> <strong>Synthesized Ambient Soundscapes:</strong> Real-time procedural rain algorithms, brown noise filters, cafe acoustic ambiance, and night crickets.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Binaural Alpha Waves (216Hz & 226Hz):</strong> Dual stereo-panned oscillators generating exact 10Hz alpha difference frequencies for deep concentration.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Retro 8-Bit Chimes:</strong> Procedural square and triangle wave sound effects for coin pickups, card flips, and Pomodoro completion.</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-card-header">
+            <div class="feature-icon-box"><i data-lucide="gamepad-2"></i></div>
+            <div>
+              <h3>4. Pixel Focus Studio & Gamification</h3>
+              <span style="font-size: 0.85rem; color: #818cf8;">Sustained Engagement & Habit Formation</span>
+            </div>
+          </div>
+          <p class="feature-desc">
+            Inspired by cozy retro gaming aesthetics, StudyFlow transforms studying from a chore into an enjoyable progression system:
+          </p>
+          <ul class="feature-list">
+            <li><i data-lucide="check-circle-2"></i> <strong>Virtual Companion ("Mochi"):</strong> A pixel pet cat that earns XP and levels up as you complete study intervals.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Study Coin Economy:</strong> Earn currency through focus sessions to unlock cozy loft room themes, headphone cosmetics, and desk trinkets.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Focus Pomodoro Timer:</strong> Structured study and rest intervals with visual progress rings and audio notifications.</li>
+          </ul>
+        </div>
+
+        <!-- 5. UI/UX Design System -->
+        <div class="feature-card" data-aos="fade-up">
+          <div class="feature-card-header">
+            <div class="feature-icon-box"><i data-lucide="palette"></i></div>
+            <div>
+              <h3>UI/UX & Product Design Highlights</h3>
+              <span style="font-size: 0.85rem; color: #818cf8;">Figma to Code Implementation</span>
+            </div>
+          </div>
+          <p class="feature-desc">
+            As a UI/UX designer, I paid meticulous attention to user psychology and visual balance:
+          </p>
+          <ul class="feature-list">
+            <li><i data-lucide="check-circle-2"></i> <strong>Aesthetic Dual Typography:</strong> Paired modern, high-legibility <em>Plus Jakarta Sans</em> for study text with nostalgic <em>Press Start 2P</em> and <em>VT323</em> for gamified studio elements.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Calm Dark Palette:</strong> Deep slate-indigo backdrop (<code>#0f111a</code>) minimizing eye fatigue during long late-night sessions.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Distraction-Free Layout:</strong> High visual hierarchy where timers and study cards take center stage without unnecessary clutter.</li>
+          </ul>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div class="preview-banner" data-aos="zoom-in">
+          <h2 style="font-size: 1.8rem; color: #ffffff;">Experience StudyFlow in Action</h2>
+          <p style="color: var(--text-secondary); max-width: 540px; font-size: 0.95rem;">
+            Test the live flashcards, procedural soundscapes, and pixel pet companion directly on Vercel.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
+            <a href="https://studyflow-zeta-nine.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+              <i data-lucide="external-link"></i> Open StudyFlow on Vercel
+            </a>
+            <a href="https://github.com/patnalanikitha/studyflow" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              GitHub Repository
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Technical Specification Sidebar -->
+      <aside class="case-sidebar">
+        <div class="sidebar-card" data-aos="fade-left">
+          <h3><i data-lucide="info" style="color: #818cf8; width: 18px; height: 18px;"></i> Project Overview</h3>
+          <div class="spec-list">
+            <div class="spec-item">
+              <span class="spec-label">Role</span>
+              <span class="spec-val">Creator & Designer</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Timeline</span>
+              <span class="spec-val">Independent Project</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Deployment</span>
+              <span class="spec-val" style="color: #34d399;">Vercel (Production)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Frontend</span>
+              <span class="spec-val">React 18 + Vite</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Styling</span>
+              <span class="spec-val">Tailwind CSS</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">AI Engine</span>
+              <span class="spec-val">Google Gemini AI SDK</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Audio Tech</span>
+              <span class="spec-val">Web Audio API</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Algorithm</span>
+              <span class="spec-val">SM-2 Spaced Repetition</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="100">
+          <h3><i data-lucide="layers" style="color: #38bdf8; width: 18px; height: 18px;"></i> Key Capabilities Tested</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; color: #cbd5e1;">
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <i data-lucide="palette" style="color: #c084fc; width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong style="color: #ffffff;">UI/UX Design Systems:</strong> Retro pixel art meets sleek modern dark mode.</div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <i data-lucide="cpu" style="color: #38bdf8; width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong style="color: #ffffff;">AI Prompt Pipelines:</strong> Structured JSON schema validation for flashcards & quizzes.</div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <i data-lucide="volume-2" style="color: #f59e0b; width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong style="color: #ffffff;">Audio Signal Processing:</strong> Biquad filters, procedural noise generators, and stereo panning.</div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <i data-lucide="database" style="color: #34d399; width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong style="color: #ffffff;">State Persistence:</strong> Schema-validated local storage sync across browser sessions.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="150">
+          <h3><i data-lucide="user" style="color: #a855f7; width: 18px; height: 18px;"></i> Developer Profile</h3>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/images/nikitha.png" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #6366f1; object-fit: cover; object-position: center 20%;" alt="Nikitha Patnala">
+            <div>
+              <div style="font-weight: 600; font-size: 0.95rem;">Nikitha Patnala</div>
+              <div style="font-size: 0.78rem; color: #818cf8;">3rd Year CSE @ GITAM</div>
+            </div>
+          </div>
+          <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+            Passionate about UI/UX Design, full-stack engineering, and AI systems.
+          </p>
+          <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%;">
+            <i data-lucide="mail"></i> Get In Touch
+          </a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Nikitha Patnala. Built with HTML5, CSS & Modern JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Developer Console Modal -->
+  <div class="terminal-overlay" id="terminal-modal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <button class="term-btn term-btn-close" id="term-close-btn" title="Close"></button>
+          <button class="term-btn term-btn-min" title="Minimize"></button>
+          <button class="term-btn term-btn-max" title="Expand"></button>
+        </div>
+        <div class="terminal-title">
+          <i data-lucide="terminal" style="width: 14px; height: 14px; color: var(--accent-primary);"></i>
+          <span>nikitha@gitam: ~</span>
+        </div>
+        <div class="terminal-hint">Press ESC or ` to close</div>
+      </div>
+      <div class="terminal-body">
+        <div class="term-welcome">
+          <i data-lucide="terminal" style="width: 14px; height: 14px; color: var(--accent-primary); vertical-align: middle;"></i> <strong>Nikitha Patnala — Developer Console</strong><br>
+          Type <span class="term-highlight">help</span> to view available commands (<span class="term-accent">about</span>, <span class="term-accent">skills</span>, <span class="term-accent">projects</span>, <span class="term-accent">contact</span>).
+        </div>
+        <div id="term-output"></div>
+        <div class="terminal-input-row">
+          <span class="term-prompt-prefix">nikitha@gitam:~$</span>
+          <input type="text" id="term-input" class="term-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/background-mesh.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
