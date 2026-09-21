@@ -137,7 +137,7 @@ const DEFAULT_PORTFOLIO_DATA = {
 
   journey: [
     {
-      period: "2024 – 2028 (Expected)",
+      period: "2024 – 2028",
       title: "B.Tech in Computer Science & Engineering",
       institution: "GITAM University",
       description: "Currently in 3rd year. Mastering core CS fundamentals: Data Structures, Algorithms, DBMS, Operating Systems, while specializing in UI/UX Design and modern web engineering."
