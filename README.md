@@ -45,16 +45,13 @@ An authentic, eye-catching, and high-performance developer portfolio built speci
 ### Option 1: Instant Browser Launch (Zero Installation)
 Simply double-click or open `index.html` directly in any web browser (Chrome, Edge, Firefox, Safari).
 
-### Option 2: Using Vite Dev Server (Recommended)
-From this project directory in PowerShell or Terminal:
-```bash
-# 1. Install Vite
-npm install
-
-# 2. Start local dev server
-npm run dev
-```
-Open `http://localhost:5173` in your browser.
+### Option 2: Local Static Server (VS Code / Python)
+- In VS Code: Right-click `index.html` and click **"Open with Live Server"**.
+- Or via terminal:
+  ```bash
+  python -m http.server 8000
+  ```
+  Open `http://localhost:8000` in your browser.
 
 ---
 
